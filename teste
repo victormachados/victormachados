@@ -1,0 +1,28 @@
+digraph G {
+  rankdir=TD;
+  node [shape=rectangle, fontname="Arial", style=filled, color="#7FDBFF"];
+
+  subgraph cluster_problem {
+    label = "Problema";
+    color=lightgrey;
+
+    anchor_point [label="Âncora inicial (ex: preço inicial de um produto)"];
+    adjustment [label="Ajuste insuficiente em relação à âncora"];
+    bias [label="Viés de ancoragem"];
+  }
+
+  subgraph cluster_education {
+    label = "Educação Financeira";
+    color=lightgrey;
+
+    awareness [label="Conscientização sobre o viés de ancoragem"];
+    strategies [label="Estratégias para mitigar o viés:\n- Considerar múltiplas referências\n- Questionar a âncora inicial\n- Usar intervalos de valores"];
+    application [label="Aplicação das estratégias em decisões financeiras"];
+  }
+
+  anchor_point -> adjustment;
+  adjustment -> bias;
+
+  awareness -> strategies;
+  strategies -> application;
+}
